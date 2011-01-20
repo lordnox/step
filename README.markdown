@@ -70,7 +70,9 @@ Also you can use group with a dynamic number of common tasks.
 
 *Note* that we both call `this.group()` and `group()`.  The first reserves a slot in the parameters of the next step, then calling `group()` generates the individual callbacks and increments the internal counter.
 
-With the *.attach* and *.destroy* methods now available you can dynamically add more functions to be called. In this case we retrieve a list of downloadable files from the server and add them to the step-stack to be downloaded one after another. If something fails we remove everything from the stack to have it end right after the error, and not after we jumped through 10th of thousands of functions.
+## Added stuff
+
+With the `this.attach(fn)` and `this.destroy()` methods now available you can dynamically add more functions to be called. In this case we retrieve a list of downloadable files from the server and add them to the step-stack to be downloaded one after another. If something fails we remove everything from the stack to have it end right after the error, and not after we jumped through 10th of thousands of functions.
 
     Step(
 	  function readDir() {
